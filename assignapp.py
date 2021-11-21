@@ -1,8 +1,8 @@
 
-import seaborn as sns
+#import seaborn as sns
 import pandas as pd
 import numpy as np
-import dtale
+#import dtale
 import streamlit as st
 import sklearn
 
