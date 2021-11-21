@@ -102,7 +102,7 @@ RF.feature_importances_
 
 st.header("My first Streamlit App")
 st.write(RF.feature_importances_)
-!streamlit run myfirstapp.py --server.port 80 &>/dev/null&
+!streamlit run assignapp.py --server.port 80 &>/dev/null&
 from pyngrok import ngrok
 ngrok.kill()
 
