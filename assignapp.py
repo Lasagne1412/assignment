@@ -1,6 +1,3 @@
-!pip install streamlit
-!pip install pyngrok
-!pip install dtale
 
 import seaborn as sns
 import pandas as pd
