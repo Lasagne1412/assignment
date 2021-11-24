@@ -49,6 +49,19 @@ confusion_matrix(ytest, y_model)
 #print()
 classification_report(ytest, y_model)
 
+#Making dictionaries
+uPlatform=data['Platform'].unique()
+uPublisher=data['Publisher'].unique()
+uGenre=data['Genre'].unique()
+platdict={}
+pubdict={}
+genredict={}
+for i in range(len(uPlatform)):
+    platdict[uPlatform[i]]=i
+for j in range(len(uPublisher)):
+    pubdict[uPublisher[j]]=j
+for k in range(len(uGenre)):
+    genredict[uGenre[k]=k
 #RF.feature_importances_
 
 #streamlit
@@ -74,8 +87,11 @@ if option=='About':
 elif option=='KNN Results':
     
     st.header('KNN Results (n neighbours = 10)')
+    st.write('Accuracy Score')
     st.table(accuracy_score(ytest, y_model))
+    st.write('Confusion Matrix')
     st.table(confusion_matrix(ytest, y_model))
+    st.write('Classification Report')
     st.table(classification_report(ytest, y_model))
     
     #p.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
@@ -86,16 +102,22 @@ elif option=='KNN Results':
 else:
     st.header('Model Prediction')
     st.write('Please insert appropriate values for prediction')
+    st.write('Platform')
+    platchoice=platdict[st.selectbox(uPlatform)]
+    st.write('Publisher')
+    pubchoice=pubdict[st.selectbox(uPublisher)]
+    st.write('Genre')
+    genchoice=genredict[st.selectbox(uGenre)]
     
     
     
 
-    st.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
-    show = st.checkbox('I agree the terms and conditions')
-    if show:
-        st.write(pd.DataFrame({
-        'Intplan': ['yes', 'yes', 'yes', 'no'],
-        'Churn Status': [0, 0, 0, 1]
-        }))
+    #st.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
+    #show = st.checkbox('I agree the terms and conditions')
+    #if show:
+        #st.write(pd.DataFrame({
+        #'Intplan': ['yes', 'yes', 'yes', 'no'],
+        #'Churn Status': [0, 0, 0, 1]
+        #}))
 
 
