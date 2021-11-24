@@ -42,52 +42,6 @@ from sklearn.metrics import accuracy_score
 
 y_model = knn.predict(Xtest) 
 print(accuracy_score(ytest, y_model))
-
-## Logistic Regression
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-
-logreg = LogisticRegression()
-logreg.fit(Xtrain, ytrain)
-ypred = logreg.predict(Xtest)
-
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
-
-## Support Vector Machine Classifier
-from sklearn.svm import SVC
-
-svc = SVC()
-svc.fit(Xtrain, ytrain)
-ypred = svc.predict(Xtest)
-
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
-
-## Gaussian Naive Bayes
-from sklearn.naive_bayes import GaussianNB
-
-nb = GaussianNB()
-nb.fit(Xtrain, ytrain)
-ypred = nb.predict(Xtest)
-
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
-
-## Random Forest
-from sklearn.ensemble import RandomForestClassifier
-
-RF = RandomForestClassifier()
-RF.fit(Xtrain, ytrain)
-ypred = RF.predict(Xtest)
-
 print(confusion_matrix(ytest, ypred))
 print()
 print()
@@ -97,8 +51,37 @@ RF.feature_importances_
 
 #streamlit
 
-st.header("My first Streamlit App")
+st.header("Video Game Sales Analysis and Predictor")
 st.write(RF.feature_importances_)
 
+st.header("My first Streamlit App")
+
+option = st.sidebar.selectbox(
+    'Select a mini project',
+     ['line chart','map','T n C'])
+
+if option=='line chart':
+    chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
+
+    st.line_chart(chart_data)
+
+elif option=='map':
+    map_data = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
+
+    st.map(map_data)
+
+else:
+
+    st.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
+    show = st.checkbox('I agree the terms and conditions')
+    if show:
+        st.write(pd.DataFrame({
+        'Intplan': ['yes', 'yes', 'yes', 'no'],
+        'Churn Status': [0, 0, 0, 1]
+        }))
 
 
