@@ -39,6 +39,8 @@ knn.fit(Xtrain, ytrain)
 print(knn.score(Xtest, ytest))
 
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 
 y_model = knn.predict(Xtest) 
 print(accuracy_score(ytest, y_model))
