@@ -44,10 +44,10 @@ print(knn.score(Xtest, ytest))
 
 y_model = knn.predict(Xtest) 
 print(accuracy_score(ytest, y_model))
-print(confusion_matrix(ytest, ypred))
+print(confusion_matrix(ytest, y_model))
 print()
 print()
-print(classification_report(ytest, ypred))
+print(classification_report(ytest, y_model))
 
 #RF.feature_importances_
 
