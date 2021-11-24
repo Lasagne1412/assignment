@@ -39,14 +39,14 @@ knn = KNeighborsClassifier(n_neighbors = 10)
 
 knn.fit(Xtrain, ytrain)
 
-print(knn.score(Xtest, ytest))
+#print(knn.score(Xtest, ytest))
 
 y_model = knn.predict(Xtest) 
-print(accuracy_score(ytest, y_model))
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
+#print(accuracy_score(ytest, y_model))
+#print(confusion_matrix(ytest, ypred))
+#print()
+#print()
+#print(classification_report(ytest, ypred))
 
 RF.feature_importances_
 
