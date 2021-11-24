@@ -54,7 +54,7 @@ print(classification_report(ytest, y_model))
 #streamlit
 
 st.header("Video Game Sales Analysis and Predictor")
-st.write(RF.feature_importances_)
+#st.write(RF.feature_importances_)
 
 st.header("My first Streamlit App")
 
