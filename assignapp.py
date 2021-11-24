@@ -40,14 +40,14 @@ knn = KNeighborsClassifier(n_neighbors = 10)
 
 knn.fit(Xtrain, ytrain)
 
-print(knn.score(Xtest, ytest))
+#print(knn.score(Xtest, ytest))
 
 y_model = knn.predict(Xtest) 
-print(accuracy_score(ytest, y_model))
-print(confusion_matrix(ytest, y_model))
-print()
-print()
-print(classification_report(ytest, y_model))
+accuracy_score(ytest, y_model)
+confusion_matrix(ytest, y_model)
+#print()
+#print()
+classification_report(ytest, y_model)
 
 #RF.feature_importances_
 
@@ -56,27 +56,39 @@ print(classification_report(ytest, y_model))
 st.header("Video Game Sales Analysis and Predictor")
 #st.write(RF.feature_importances_)
 
-st.header("My first Streamlit App")
-
 option = st.sidebar.selectbox(
-    'Select a mini project',
-     ['line chart','map','T n C'])
+    'Select a mode',
+     ['About','KNN Results','Model Prediction'])
 
-if option=='line chart':
-    chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
+if option=='About':
+    st.header('About')
+    st.write('Data pulled from vgchartz.com by user GregorySmith on Kaggle on video games with sales exceeding 100,000 copies.')
+    st.write('Data has factors Year Released, Platform, Publisher, and genre, while the output is Global Sales Generated.')
+    st.write('Data was analyzed using KNN model')
+    #hart_data = pd.DataFrame(
+    #p.random.randn(20, 3),
+    #olumns=['a', 'b', 'c'])
 
-    st.line_chart(chart_data)
+    #t.line_chart(chart_data)
 
-elif option=='map':
-    map_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
+elif option=='KNN Results':
+    
+    st.header('KNN Results (n neighbours = 10)')
+    st.table(accuracy_score(ytest, y_model))
+    st.table(confusion_matrix(ytest, y_model))
+    st.table(classification_report(ytest, y_model))
+    
+    #p.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    #olumns=['lat', 'lon'])
 
-    st.map(map_data)
+    #t.map(map_data)
 
 else:
+    st.header('Model Prediction')
+    st.write('Please insert appropriate values for prediction')
+    
+    
+    
 
     st.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
     show = st.checkbox('I agree the terms and conditions')
