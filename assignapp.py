@@ -103,11 +103,11 @@ else:
     st.header('Model Prediction')
     st.write('Please insert appropriate values for prediction')
     st.write('Platform')
-    platchoice=platdict[st.selectbox(uPlatform)]
+    platchoice=platdict[st.selectbox('PS','PS2','PS3','PS4','PSV','XB','PC','XOne','DC','GC','Wii','WiiU')]
     st.write('Publisher')
-    pubchoice=pubdict[st.selectbox(uPublisher)]
+    pubchoice=pubdict[st.selectbox('Nintendo','Microsoft Game Studios','Sony Computer Entertainment','Activision')]
     st.write('Genre')
-    genchoice=genredict[st.selectbox(uGenre)]
+    genchoice=genredict[st.selectbox('Sports', 'Platform', 'Racing', 'Role-Playing', 'Puzzle','Misc','Shooter','Simulation', 'Action', 'Fighting', 'Adventure', 'Strategy')]
     
     
     
