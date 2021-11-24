@@ -104,12 +104,16 @@ else:
     st.write('Please insert appropriate values for prediction')
     st.write('Platform')
     platchoice=platdict[st.selectbox('Platform select',('PS','PS2','PS3','PS4','PSV','XB','PC','XOne','DC','GC','Wii','WiiU'))]
-   
-    #['PS','PS2','PS3','PS4','PSV','XB','PC','XOne','DC','GC','Wii','WiiU']
-    #st.write('Publisher')
-    #pubchoice=st.selectbox('Nintendo','Microsoft Game Studios','Sony Computer Entertainment','Activision')
-    #st.write('Genre')
-    #genchoice=st.selectbox('Sports', 'Platform', 'Racing', 'Role-Playing', 'Puzzle','Misc','Shooter','Simulation', 'Action', 'Fighting', 'Adventure', 'Strategy')
+    st.write('Publisher')
+    pubchoice=st.selectbox('Nintendo','Microsoft Game Studios','Sony Computer Entertainment','Activision')
+    st.write('Genre')
+    genchoice=st.selectbox('Sports', 'Platform', 'Racing', 'Role-Playing', 'Puzzle','Misc','Shooter','Simulation', 'Action', 'Fighting', 'Adventure', 'Strategy')
+    st.write('Year Published')
+    yearchoice=st.number_input('Pick a year', 1995, 2021)
+    if st.button('Run!'):
+        xinput=[yearchoice,platchoice,pubchoice,genchoice]
+        st.write(ypredict=knn.predict(xinput)) 
+    
     
     
     
