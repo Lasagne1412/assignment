@@ -61,7 +61,7 @@ for i in range(len(uPlatform)):
 for j in range(len(uPublisher)):
     pubdict[uPublisher[j]]=j
 for k in range(len(uGenre)):
-    genredict[uGenre[k]=k
+    genredict[uGenre[k]]=k
 #RF.feature_importances_
 
 #streamlit
