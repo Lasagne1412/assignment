@@ -31,16 +31,15 @@ Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, random_state = 99)
 
 ## KNN
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 
 knn = KNeighborsClassifier(n_neighbors = 10)
 
 knn.fit(Xtrain, ytrain)
 
 print(knn.score(Xtest, ytest))
-
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
 
 y_model = knn.predict(Xtest) 
 print(accuracy_score(ytest, y_model))
