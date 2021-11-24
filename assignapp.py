@@ -111,7 +111,7 @@ else:
     st.write('Year Published')
     yearchoice=st.number_input('Pick a year', 1995, 2021)
     if st.button('Run!'):
-        xinput=[yearchoice,platchoice,pubchoice,genchoice]
+        xinput=pd.DataFrame(yearchoice,platchoice,pubchoice,genchoice)
         st.write(ypredict=knn.predict(xinput)) 
     
     
