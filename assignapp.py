@@ -88,11 +88,11 @@ elif option=='KNN Results':
     
     st.header('KNN Results (n neighbours = 10)')
     st.write('Accuracy Score')
-    st.table(accuracy_score(ytest, y_model))
+    st.write(accuracy_score(ytest, y_model))
     st.write('Confusion Matrix')
-    st.table(confusion_matrix(ytest, y_model))
+    st.write(confusion_matrix(ytest, y_model))
     st.write('Classification Report')
-    st.table(classification_report(ytest, y_model))
+    st.write(classification_report(ytest, y_model))
     
     #p.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
     #olumns=['lat', 'lon'])
