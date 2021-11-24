@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -39,16 +40,16 @@ knn = KNeighborsClassifier(n_neighbors = 10)
 
 knn.fit(Xtrain, ytrain)
 
-#print(knn.score(Xtest, ytest))
+print(knn.score(Xtest, ytest))
 
 y_model = knn.predict(Xtest) 
-#print(accuracy_score(ytest, y_model))
-#print(confusion_matrix(ytest, ypred))
-#print()
-#print()
-#print(classification_report(ytest, ypred))
+print(accuracy_score(ytest, y_model))
+print(confusion_matrix(ytest, ypred))
+print()
+print()
+print(classification_report(ytest, ypred))
 
-RF.feature_importances_
+#RF.feature_importances_
 
 #streamlit
 
