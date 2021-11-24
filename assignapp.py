@@ -43,55 +43,6 @@ from sklearn.metrics import accuracy_score
 y_model = knn.predict(Xtest) 
 print(accuracy_score(ytest, y_model))
 
-## Logistic Regression
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-
-logreg = LogisticRegression()
-logreg.fit(Xtrain, ytrain)
-ypred = logreg.predict(Xtest)
-
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
-
-## Support Vector Machine Classifier
-from sklearn.svm import SVC
-
-svc = SVC()
-svc.fit(Xtrain, ytrain)
-ypred = svc.predict(Xtest)
-
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
-
-## Gaussian Naive Bayes
-from sklearn.naive_bayes import GaussianNB
-
-nb = GaussianNB()
-nb.fit(Xtrain, ytrain)
-ypred = nb.predict(Xtest)
-
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
-
-## Random Forest
-from sklearn.ensemble import RandomForestClassifier
-
-RF = RandomForestClassifier()
-RF.fit(Xtrain, ytrain)
-ypred = RF.predict(Xtest)
-
-print(confusion_matrix(ytest, ypred))
-print()
-print()
-print(classification_report(ytest, ypred))
 
 RF.feature_importances_
 
